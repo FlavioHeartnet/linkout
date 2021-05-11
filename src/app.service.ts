@@ -1,8 +1,23 @@
 import { Injectable } from '@nestjs/common';
+import {linkoutAppURL} from './Model/linkoutAppURL'
 
+const ANDROID: number = 1
+const IOS: number = 2
 @Injectable()
 export class AppService {
-  getHello(): string {
-    return 'Hello World!';
+  getLinkOutKorea(deviceos: number): linkoutAppURL { 
+    let linkout = new linkoutAppURL();
+      if(deviceos == ANDROID){
+        linkout.appName = 'kr.co.bmwkorea.plus';
+        linkout.appUrl = 'https://play.google.com/store/apps/details?id='+linkout.appName;
+      }else if(deviceos == IOS){
+     
+        linkout.appName = 'bmwplus://';
+        linkout.appUrl = 'itms-apps://itunes.apple.com/app/apple-store/id1281874994';
+      }else{
+        linkout.appName = 'Invalid OS';
+        linkout.appUrl = deviceos.toString();
+      }
+    return linkout;
   }
 }
