@@ -14,8 +14,8 @@ describe('AppController', () => {
 
   describe('getLinkOutKorea', () => {
     it('should return json with links', () => {
-      const appController = app.get<AppController>(AppController);
-      expect(appController.getLinkOutKorea(1)).toBeCalled()
+      const appService = app.get<AppService>(AppService);
+      expect(appService.getLinkOutKorea(1)).toBeTruthy();
     });
   });
 });

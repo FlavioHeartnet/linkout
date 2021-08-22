@@ -1,4 +1,4 @@
-export class linkoutAppURL{
-    public appName:string
-    public appUrl: String
+export class linkoutAppURL {
+  public appName: string;
+  public appUrl: string;
 }
