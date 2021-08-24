@@ -1,6 +1,6 @@
 import { Controller, Get, Param, Post } from '@nestjs/common';
 import { AppService } from './app.service';
-import { linkoutAppURL } from './Model/linkoutAppURL';
+import { LinkoutAppURL } from './Model/linkoutAppURL';
 
 @Controller()
 export class AppController {
@@ -12,7 +12,7 @@ export class AppController {
   }
 
   @Post(':id')
-  getLinkOutKorea(@Param() params): linkoutAppURL {
+  getLinkOutKorea(@Param() params): LinkoutAppURL {
     console.log(params);
     return this.appService.getLinkOutKorea(params.id);
   }

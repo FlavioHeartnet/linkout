@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common';
-import { linkoutAppURL } from './Model/linkoutAppURL';
+import { LinkoutAppURL } from './Model/linkoutAppURL';
 
 const ANDROID = 1;
 const IOS = 2;
 @Injectable()
 export class AppService {
-  getLinkOutKorea(deviceos: number): linkoutAppURL {
-    const linkout = new linkoutAppURL();
+  getLinkOutKorea(deviceos: number): LinkoutAppURL {
+    const linkout = new LinkoutAppURL();
     if (deviceos == ANDROID) {
       linkout.appName = 'kr.co.bmwkorea.plus';
       linkout.appUrl =
